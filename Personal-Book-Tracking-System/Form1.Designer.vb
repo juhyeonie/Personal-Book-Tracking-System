@@ -78,7 +78,7 @@
         Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Bold)
         Me.lblTitle.Location = New System.Drawing.Point(12, 9)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(317, 25)
+        Me.lblTitle.Size = New System.Drawing.Size(309, 24)
         Me.lblTitle.TabIndex = 0
         Me.lblTitle.Text = "📚 Personal Book Tracking System"
         '
