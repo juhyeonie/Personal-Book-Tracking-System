@@ -33,14 +33,20 @@ Public Class Form2
                 conn.Close()
             End Try
         End Using
+
+        Me.Close()
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-
+        txtBookName.Clear()
+        txtAuthor.Clear()
+        txtISBN.Clear()
+        txtYear.Clear()
+        cmbStatus.SelectedIndex = -1 'reset combo
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-
+        Me.Close()
     End Sub
 
 
