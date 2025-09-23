@@ -51,7 +51,7 @@ Partial Class Form2
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.grpDetails = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cmbStatus = New System.Windows.Forms.ComboBox()
         Me.grpDetails.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -61,7 +61,7 @@ Partial Class Form2
         Me.lblBookName.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.lblBookName.Location = New System.Drawing.Point(17, 30)
         Me.lblBookName.Name = "lblBookName"
-        Me.lblBookName.Size = New System.Drawing.Size(119, 19)
+        Me.lblBookName.Size = New System.Drawing.Size(112, 18)
         Me.lblBookName.TabIndex = 0
         Me.lblBookName.Text = "📖 Name of Book"
         '
@@ -71,7 +71,7 @@ Partial Class Form2
         Me.lblAuthor.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.lblAuthor.Location = New System.Drawing.Point(17, 65)
         Me.lblAuthor.Name = "lblAuthor"
-        Me.lblAuthor.Size = New System.Drawing.Size(75, 19)
+        Me.lblAuthor.Size = New System.Drawing.Size(68, 18)
         Me.lblAuthor.TabIndex = 1
         Me.lblAuthor.Text = "✍ Author"
         '
@@ -81,7 +81,7 @@ Partial Class Form2
         Me.lblISBN.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.lblISBN.Location = New System.Drawing.Point(17, 100)
         Me.lblISBN.Name = "lblISBN"
-        Me.lblISBN.Size = New System.Drawing.Size(61, 19)
+        Me.lblISBN.Size = New System.Drawing.Size(54, 18)
         Me.lblISBN.TabIndex = 2
         Me.lblISBN.Text = "🔖 ISBN"
         '
@@ -91,7 +91,7 @@ Partial Class Form2
         Me.lblYear.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.lblYear.Location = New System.Drawing.Point(17, 134)
         Me.lblYear.Name = "lblYear"
-        Me.lblYear.Size = New System.Drawing.Size(121, 19)
+        Me.lblYear.Size = New System.Drawing.Size(115, 18)
         Me.lblYear.TabIndex = 3
         Me.lblYear.Text = "📅 Year Published"
         '
@@ -101,7 +101,7 @@ Partial Class Form2
         Me.lblProgress.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.lblProgress.Location = New System.Drawing.Point(17, 169)
         Me.lblProgress.Name = "lblProgress"
-        Me.lblProgress.Size = New System.Drawing.Size(120, 19)
+        Me.lblProgress.Size = New System.Drawing.Size(113, 18)
         Me.lblProgress.TabIndex = 4
         Me.lblProgress.Text = "📊 Book Progress"
         '
@@ -186,7 +186,7 @@ Partial Class Form2
         'grpDetails
         '
         Me.grpDetails.BackColor = System.Drawing.Color.White
-        Me.grpDetails.Controls.Add(Me.ComboBox1)
+        Me.grpDetails.Controls.Add(Me.cmbStatus)
         Me.grpDetails.Controls.Add(Me.lblBookName)
         Me.grpDetails.Controls.Add(Me.lblAuthor)
         Me.grpDetails.Controls.Add(Me.lblISBN)
@@ -206,14 +206,14 @@ Partial Class Form2
         Me.grpDetails.TabStop = False
         Me.grpDetails.Text = " Book Details "
         '
-        'ComboBox1
+        'cmbStatus
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Not Started", "In Progress", "Completed"})
-        Me.ComboBox1.Location = New System.Drawing.Point(137, 167)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(214, 21)
-        Me.ComboBox1.TabIndex = 13
+        Me.cmbStatus.FormattingEnabled = True
+        Me.cmbStatus.Items.AddRange(New Object() {"Not Started", "In Progress", "Completed"})
+        Me.cmbStatus.Location = New System.Drawing.Point(137, 167)
+        Me.cmbStatus.Name = "cmbStatus"
+        Me.cmbStatus.Size = New System.Drawing.Size(214, 21)
+        Me.cmbStatus.TabIndex = 13
         '
         'Form2
         '
@@ -235,5 +235,5 @@ Partial Class Form2
 
     End Sub
 
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cmbStatus As ComboBox
 End Class

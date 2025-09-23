@@ -10,15 +10,6 @@ Public Class Form1
         Dim connString As String =
             "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\dudez\Source\Repos\Personal-Book-Tracking-System\Personal-Book-Tracking-System\Ms Access\BookTracker.accdb;"
         conn = New OleDbConnection(connString)
-        'connection test langs
-        Try
-            conn.Open()
-            MessageBox.Show("Connection successful!")
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
-        Finally
-            conn.Close()
-        End Try
 
         'load data into DataGridView (dgvBooks to)
         LoadData()
@@ -32,6 +23,7 @@ Public Class Form1
         adapter.Fill(dt)
         conn.Close()
         dgvBooks.DataSource = dt
+
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
