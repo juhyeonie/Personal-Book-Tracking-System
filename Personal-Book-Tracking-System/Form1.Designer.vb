@@ -21,7 +21,6 @@ Partial Class Form1
     Friend WithEvents btnAdd As Button
     Friend WithEvents btnEdit As Button
     Friend WithEvents btnDelete As Button
-    Friend WithEvents btnSearch As Button
     Friend WithEvents lblTitle As Label
 
     'NOTE: The following procedure is required by the Windows Form Designer
@@ -29,12 +28,13 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.dgvBooks = New System.Windows.Forms.DataGridView()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
-        Me.btnSearch = New System.Windows.Forms.Button()
         Me.lblTitle = New System.Windows.Forms.Label()
+        Me.btnSearch = New System.Windows.Forms.Button()
         CType(Me.dgvBooks, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -89,17 +89,6 @@ Partial Class Form1
         Me.btnDelete.Text = "🗑️ Delete"
         Me.btnDelete.UseVisualStyleBackColor = False
         '
-        'btnSearch
-        '
-        Me.btnSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnSearch.Location = New System.Drawing.Point(469, 16)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(69, 23)
-        Me.btnSearch.TabIndex = 3
-        Me.btnSearch.Text = "🔍 Search"
-        Me.btnSearch.UseVisualStyleBackColor = True
-        '
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
@@ -110,18 +99,30 @@ Partial Class Form1
         Me.lblTitle.TabIndex = 0
         Me.lblTitle.Text = "📚 Personal Book Tracker"
         '
+        'btnSearch
+        '
+        Me.btnSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnSearch.Location = New System.Drawing.Point(220, 276)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(77, 23)
+        Me.btnSearch.TabIndex = 7
+        Me.btnSearch.Text = "🔍 Search"
+        Me.btnSearch.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(552, 313)
+        Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.lblTitle)
         Me.Controls.Add(Me.dgvBooks)
-        Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.btnDelete)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(568, 352)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -132,4 +133,5 @@ Partial Class Form1
 
     End Sub
 
+    Friend WithEvents btnSearch As Button
 End Class
