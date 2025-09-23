@@ -95,7 +95,7 @@ Partial Class Form1
         Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Bold)
         Me.lblTitle.Location = New System.Drawing.Point(10, 8)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(278, 30)
+        Me.lblTitle.Size = New System.Drawing.Size(271, 28)
         Me.lblTitle.TabIndex = 0
         Me.lblTitle.Text = "📚 Personal Book Tracker"
         '
