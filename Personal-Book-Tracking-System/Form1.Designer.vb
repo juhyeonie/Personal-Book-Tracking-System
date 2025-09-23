@@ -1,19 +1,35 @@
-﻿Partial Class Form1
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class Form1
     Inherits System.Windows.Forms.Form
 
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()>
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
+
     Friend WithEvents dgvBooks As DataGridView
-    Friend WithEvents txtSearch As TextBox
     Friend WithEvents btnAdd As Button
     Friend WithEvents btnEdit As Button
     Friend WithEvents btnDelete As Button
     Friend WithEvents btnSearch As Button
     Friend WithEvents lblTitle As Label
 
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.dgvBooks = New System.Windows.Forms.DataGridView()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
@@ -26,77 +42,94 @@
         '
         Me.dgvBooks.AllowUserToAddRows = False
         Me.dgvBooks.AllowUserToDeleteRows = False
+        Me.dgvBooks.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgvBooks.Location = New System.Drawing.Point(12, 50)
+        Me.dgvBooks.BackgroundColor = System.Drawing.Color.White
+        Me.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvBooks.Location = New System.Drawing.Point(10, 43)
         Me.dgvBooks.Name = "dgvBooks"
         Me.dgvBooks.ReadOnly = True
-        Me.dgvBooks.Size = New System.Drawing.Size(616, 250)
+        Me.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvBooks.Size = New System.Drawing.Size(528, 217)
         Me.dgvBooks.TabIndex = 1
-        '
-        'txtSearch
-        '
-        Me.txtSearch.Location = New System.Drawing.Point(12, 310)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(200, 20)
-        Me.txtSearch.TabIndex = 2
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(386, 310)
+        Me.btnAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnAdd.Location = New System.Drawing.Point(303, 276)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(75, 20)
+        Me.btnAdd.Size = New System.Drawing.Size(77, 23)
         Me.btnAdd.TabIndex = 4
-        Me.btnAdd.Text = "Add"
+        Me.btnAdd.Text = "➕ Add"
+        Me.btnAdd.UseVisualStyleBackColor = True
         '
         'btnEdit
         '
-        Me.btnEdit.Location = New System.Drawing.Point(469, 310)
+        Me.btnEdit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnEdit.Location = New System.Drawing.Point(385, 276)
         Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(75, 20)
+        Me.btnEdit.Size = New System.Drawing.Size(77, 23)
         Me.btnEdit.TabIndex = 5
-        Me.btnEdit.Text = "Edit"
+        Me.btnEdit.Text = "✏️ Edit"
+        Me.btnEdit.UseVisualStyleBackColor = True
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(552, 310)
+        Me.btnDelete.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnDelete.BackColor = System.Drawing.Color.IndianRed
+        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnDelete.Location = New System.Drawing.Point(467, 276)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(75, 20)
+        Me.btnDelete.Size = New System.Drawing.Size(71, 23)
         Me.btnDelete.TabIndex = 6
-        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.Text = "🗑️ Delete"
+        Me.btnDelete.UseVisualStyleBackColor = False
         '
         'btnSearch
         '
-        Me.btnSearch.Location = New System.Drawing.Point(218, 310)
+        Me.btnSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnSearch.Location = New System.Drawing.Point(469, 16)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(75, 23)
+        Me.btnSearch.Size = New System.Drawing.Size(69, 23)
         Me.btnSearch.TabIndex = 3
-        Me.btnSearch.Text = "Search"
+        Me.btnSearch.Text = "🔍 Search"
+        Me.btnSearch.UseVisualStyleBackColor = True
         '
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
-        Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.lblTitle.Location = New System.Drawing.Point(12, 9)
+        Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Bold)
+        Me.lblTitle.Location = New System.Drawing.Point(10, 8)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(309, 24)
+        Me.lblTitle.Size = New System.Drawing.Size(278, 30)
         Me.lblTitle.TabIndex = 0
-        Me.lblTitle.Text = "📚 Personal Book Tracking System"
+        Me.lblTitle.Text = "📚 Personal Book Tracker"
         '
         'Form1
         '
-        Me.ClientSize = New System.Drawing.Size(640, 420)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ClientSize = New System.Drawing.Size(552, 313)
         Me.Controls.Add(Me.lblTitle)
         Me.Controls.Add(Me.dgvBooks)
-        Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.btnDelete)
+        Me.MinimumSize = New System.Drawing.Size(568, 352)
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Book Tracking System"
         CType(Me.dgvBooks, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
+
 End Class
