@@ -14,7 +14,6 @@ Partial Class Form4
     Friend WithEvents txtISBN As TextBox
     Friend WithEvents txtName As TextBox
     Friend WithEvents txtAuthor As TextBox
-    Friend WithEvents txtYear As TextBox
     Friend WithEvents cmbProgress As ComboBox
     Friend WithEvents lstResults As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
@@ -38,7 +37,6 @@ Partial Class Form4
         Me.lblISBN = New System.Windows.Forms.Label()
         Me.txtISBN = New System.Windows.Forms.TextBox()
         Me.lblYear = New System.Windows.Forms.Label()
-        Me.txtYear = New System.Windows.Forms.TextBox()
         Me.lblProgress = New System.Windows.Forms.Label()
         Me.cmbProgress = New System.Windows.Forms.ComboBox()
         Me.lstResults = New System.Windows.Forms.ListView()
@@ -51,6 +49,8 @@ Partial Class Form4
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
+        Me.chkNoYear = New System.Windows.Forms.CheckBox()
+        Me.cmbYear = New System.Windows.Forms.ComboBox()
         Me.pnlSearch.SuspendLayout()
         Me.pnlFooter.SuspendLayout()
         Me.SuspendLayout()
@@ -73,6 +73,8 @@ Partial Class Form4
         '
         Me.pnlSearch.BackColor = System.Drawing.Color.White
         Me.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlSearch.Controls.Add(Me.chkNoYear)
+        Me.pnlSearch.Controls.Add(Me.cmbYear)
         Me.pnlSearch.Controls.Add(Me.lblName)
         Me.pnlSearch.Controls.Add(Me.txtName)
         Me.pnlSearch.Controls.Add(Me.lblAuthor)
@@ -80,7 +82,6 @@ Partial Class Form4
         Me.pnlSearch.Controls.Add(Me.lblISBN)
         Me.pnlSearch.Controls.Add(Me.txtISBN)
         Me.pnlSearch.Controls.Add(Me.lblYear)
-        Me.pnlSearch.Controls.Add(Me.txtYear)
         Me.pnlSearch.Controls.Add(Me.lblProgress)
         Me.pnlSearch.Controls.Add(Me.cmbProgress)
         Me.pnlSearch.Location = New System.Drawing.Point(20, 60)
@@ -95,7 +96,7 @@ Partial Class Form4
         Me.lblName.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblName.Location = New System.Drawing.Point(20, 16)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(101, 17)
+        Me.lblName.Size = New System.Drawing.Size(131, 23)
         Me.lblName.TabIndex = 0
         Me.lblName.Text = "📖 Book Name:"
         '
@@ -103,7 +104,7 @@ Partial Class Form4
         '
         Me.txtName.Location = New System.Drawing.Point(150, 13)
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(180, 20)
+        Me.txtName.Size = New System.Drawing.Size(180, 22)
         Me.txtName.TabIndex = 1
         '
         'lblAuthor
@@ -112,7 +113,7 @@ Partial Class Form4
         Me.lblAuthor.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAuthor.Location = New System.Drawing.Point(20, 42)
         Me.lblAuthor.Name = "lblAuthor"
-        Me.lblAuthor.Size = New System.Drawing.Size(72, 17)
+        Me.lblAuthor.Size = New System.Drawing.Size(95, 23)
         Me.lblAuthor.TabIndex = 2
         Me.lblAuthor.Text = "✍️ Author:"
         '
@@ -120,7 +121,7 @@ Partial Class Form4
         '
         Me.txtAuthor.Location = New System.Drawing.Point(150, 39)
         Me.txtAuthor.Name = "txtAuthor"
-        Me.txtAuthor.Size = New System.Drawing.Size(180, 20)
+        Me.txtAuthor.Size = New System.Drawing.Size(180, 22)
         Me.txtAuthor.TabIndex = 3
         '
         'lblISBN
@@ -129,7 +130,7 @@ Partial Class Form4
         Me.lblISBN.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblISBN.Location = New System.Drawing.Point(20, 68)
         Me.lblISBN.Name = "lblISBN"
-        Me.lblISBN.Size = New System.Drawing.Size(60, 17)
+        Me.lblISBN.Size = New System.Drawing.Size(79, 23)
         Me.lblISBN.TabIndex = 4
         Me.lblISBN.Text = "🔖 ISBN:"
         '
@@ -137,7 +138,7 @@ Partial Class Form4
         '
         Me.txtISBN.Location = New System.Drawing.Point(150, 65)
         Me.txtISBN.Name = "txtISBN"
-        Me.txtISBN.Size = New System.Drawing.Size(180, 20)
+        Me.txtISBN.Size = New System.Drawing.Size(180, 22)
         Me.txtISBN.TabIndex = 5
         '
         'lblYear
@@ -146,16 +147,9 @@ Partial Class Form4
         Me.lblYear.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblYear.Location = New System.Drawing.Point(23, 94)
         Me.lblYear.Name = "lblYear"
-        Me.lblYear.Size = New System.Drawing.Size(58, 17)
+        Me.lblYear.Size = New System.Drawing.Size(74, 23)
         Me.lblYear.TabIndex = 6
         Me.lblYear.Text = "📅 Year:"
-        '
-        'txtYear
-        '
-        Me.txtYear.Location = New System.Drawing.Point(150, 91)
-        Me.txtYear.Name = "txtYear"
-        Me.txtYear.Size = New System.Drawing.Size(100, 20)
-        Me.txtYear.TabIndex = 7
         '
         'lblProgress
         '
@@ -163,17 +157,17 @@ Partial Class Form4
         Me.lblProgress.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblProgress.Location = New System.Drawing.Point(23, 120)
         Me.lblProgress.Name = "lblProgress"
-        Me.lblProgress.Size = New System.Drawing.Size(85, 17)
+        Me.lblProgress.Size = New System.Drawing.Size(107, 23)
         Me.lblProgress.TabIndex = 8
         Me.lblProgress.Text = "📊 Progress:"
         '
         'cmbProgress
         '
         Me.cmbProgress.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbProgress.Items.AddRange(New Object() {"Not Started", "In Progress", "Completed"})
+        Me.cmbProgress.Items.AddRange(New Object() {"Not Started", "In Progress", "Completed", "Dropped"})
         Me.cmbProgress.Location = New System.Drawing.Point(150, 117)
         Me.cmbProgress.Name = "cmbProgress"
-        Me.cmbProgress.Size = New System.Drawing.Size(130, 21)
+        Me.cmbProgress.Size = New System.Drawing.Size(130, 24)
         Me.cmbProgress.TabIndex = 9
         '
         'lstResults
@@ -269,6 +263,28 @@ Partial Class Form4
         Me.btnCancel.Text = "❌ Cancel"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
+        'chkNoYear
+        '
+        Me.chkNoYear.AutoSize = True
+        Me.chkNoYear.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkNoYear.Location = New System.Drawing.Point(256, 93)
+        Me.chkNoYear.Name = "chkNoYear"
+        Me.chkNoYear.Size = New System.Drawing.Size(174, 20)
+        Me.chkNoYear.TabIndex = 26
+        Me.chkNoYear.Text = "Check if year is unknown"
+        Me.chkNoYear.UseVisualStyleBackColor = True
+        '
+        'cmbYear
+        '
+        Me.cmbYear.DropDownHeight = 75
+        Me.cmbYear.DropDownWidth = 75
+        Me.cmbYear.FormattingEnabled = True
+        Me.cmbYear.IntegralHeight = False
+        Me.cmbYear.Location = New System.Drawing.Point(150, 89)
+        Me.cmbYear.Name = "cmbYear"
+        Me.cmbYear.Size = New System.Drawing.Size(100, 24)
+        Me.cmbYear.TabIndex = 25
+        '
         'Form4
         '
         Me.BackColor = System.Drawing.Color.WhiteSmoke
@@ -287,4 +303,7 @@ Partial Class Form4
         Me.ResumeLayout(False)
 
     End Sub
+
+    Friend WithEvents chkNoYear As CheckBox
+    Friend WithEvents cmbYear As ComboBox
 End Class

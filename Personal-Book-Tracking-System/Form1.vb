@@ -17,14 +17,29 @@ Public Class Form1
     End Sub
 
     Private Sub LoadData()
-
-        dt = New DataTable()
+        Try
+            dt = New DataTable()
         conn.Open()
         adapter = New OleDbDataAdapter("SELECT * FROM Books", conn)
         adapter.Fill(dt)
         conn.Close()
         dgvBooks.DataSource = dt
 
+            For Each row As DataRow In dt.Rows
+                If row("YearPublished") IsNot Nothing Then
+                    Dim yearrValue = row("YearPublished").ToString()
+
+                    If yearValue = "0" Then
+                        row("YearPublished") = DBNull.Value
+                    End If
+                End If
+            Next
+            dgvBooks.Columns("ID").Visible = False 'hide ID column
+        Catch ex As Exception
+            MessageBox.Show("Error loading data: " & ex.Message)
+        Finally
+            If conn.State = ConnectionState.Open Then conn.Close()
+        End Try
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -33,7 +48,6 @@ Public Class Form1
         f2.ShowDialog()
 
         LoadData()
-
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
