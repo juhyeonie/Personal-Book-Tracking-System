@@ -28,6 +28,7 @@ Partial Class Form3
     Friend WithEvents txtISBN As TextBox
     Friend WithEvents txtYear As TextBox
     Friend WithEvents cmbProgress As ComboBox
+    Friend WithEvents pnlFooter As Panel
     Friend WithEvents btnConfirm As Button
     Friend WithEvents btnCancel As Button
 
@@ -44,20 +45,22 @@ Partial Class Form3
         Me.txtISBN = New System.Windows.Forms.TextBox()
         Me.txtYear = New System.Windows.Forms.TextBox()
         Me.cmbProgress = New System.Windows.Forms.ComboBox()
+        Me.pnlFooter = New System.Windows.Forms.Panel()
         Me.btnConfirm = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
+        Me.pnlFooter.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblTitle
         '
         Me.lblTitle.BackColor = System.Drawing.Color.SteelBlue
         Me.lblTitle.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitle.ForeColor = System.Drawing.Color.White
         Me.lblTitle.Location = New System.Drawing.Point(0, 0)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Padding = New System.Windows.Forms.Padding(10, 5, 0, 5)
-        Me.lblTitle.Size = New System.Drawing.Size(400, 45)
+        Me.lblTitle.Padding = New System.Windows.Forms.Padding(9, 4, 0, 4)
+        Me.lblTitle.Size = New System.Drawing.Size(343, 39)
         Me.lblTitle.TabIndex = 0
         Me.lblTitle.Text = "✏️ Edit Book Details"
         Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -65,74 +68,79 @@ Partial Class Form3
         'lblName
         '
         Me.lblName.AutoSize = True
-        Me.lblName.Location = New System.Drawing.Point(30, 70)
+        Me.lblName.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblName.Location = New System.Drawing.Point(26, 61)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(90, 15)
+        Me.lblName.Size = New System.Drawing.Size(101, 17)
         Me.lblName.TabIndex = 1
         Me.lblName.Text = "📖 Book Name:"
         '
         'lblAuthor
         '
         Me.lblAuthor.AutoSize = True
-        Me.lblAuthor.Location = New System.Drawing.Point(30, 110)
+        Me.lblAuthor.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAuthor.Location = New System.Drawing.Point(26, 95)
         Me.lblAuthor.Name = "lblAuthor"
-        Me.lblAuthor.Size = New System.Drawing.Size(62, 15)
+        Me.lblAuthor.Size = New System.Drawing.Size(72, 17)
         Me.lblAuthor.TabIndex = 2
         Me.lblAuthor.Text = "✍️ Author:"
         '
         'lblISBN
         '
         Me.lblISBN.AutoSize = True
-        Me.lblISBN.Location = New System.Drawing.Point(30, 150)
+        Me.lblISBN.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblISBN.Location = New System.Drawing.Point(26, 130)
         Me.lblISBN.Name = "lblISBN"
-        Me.lblISBN.Size = New System.Drawing.Size(43, 15)
+        Me.lblISBN.Size = New System.Drawing.Size(60, 17)
         Me.lblISBN.TabIndex = 3
         Me.lblISBN.Text = "🔖 ISBN:"
         '
         'lblYear
         '
         Me.lblYear.AutoSize = True
-        Me.lblYear.Location = New System.Drawing.Point(30, 190)
+        Me.lblYear.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblYear.Location = New System.Drawing.Point(26, 165)
         Me.lblYear.Name = "lblYear"
-        Me.lblYear.Size = New System.Drawing.Size(97, 15)
+        Me.lblYear.Size = New System.Drawing.Size(118, 17)
         Me.lblYear.TabIndex = 4
         Me.lblYear.Text = "📅 Year Published:"
         '
         'lblProgress
         '
         Me.lblProgress.AutoSize = True
-        Me.lblProgress.Location = New System.Drawing.Point(30, 230)
+        Me.lblProgress.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblProgress.Location = New System.Drawing.Point(26, 199)
         Me.lblProgress.Name = "lblProgress"
-        Me.lblProgress.Size = New System.Drawing.Size(94, 15)
+        Me.lblProgress.Size = New System.Drawing.Size(118, 17)
         Me.lblProgress.TabIndex = 5
         Me.lblProgress.Text = "📊 Book Progress:"
         '
         'txtName
         '
-        Me.txtName.Location = New System.Drawing.Point(150, 67)
+        Me.txtName.Location = New System.Drawing.Point(140, 58)
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(220, 23)
+        Me.txtName.Size = New System.Drawing.Size(178, 20)
         Me.txtName.TabIndex = 6
         '
         'txtAuthor
         '
-        Me.txtAuthor.Location = New System.Drawing.Point(150, 107)
+        Me.txtAuthor.Location = New System.Drawing.Point(140, 93)
         Me.txtAuthor.Name = "txtAuthor"
-        Me.txtAuthor.Size = New System.Drawing.Size(220, 23)
+        Me.txtAuthor.Size = New System.Drawing.Size(178, 20)
         Me.txtAuthor.TabIndex = 7
         '
         'txtISBN
         '
-        Me.txtISBN.Location = New System.Drawing.Point(150, 147)
+        Me.txtISBN.Location = New System.Drawing.Point(140, 127)
         Me.txtISBN.Name = "txtISBN"
-        Me.txtISBN.Size = New System.Drawing.Size(220, 23)
+        Me.txtISBN.Size = New System.Drawing.Size(178, 20)
         Me.txtISBN.TabIndex = 8
         '
         'txtYear
         '
-        Me.txtYear.Location = New System.Drawing.Point(150, 187)
+        Me.txtYear.Location = New System.Drawing.Point(140, 162)
         Me.txtYear.Name = "txtYear"
-        Me.txtYear.Size = New System.Drawing.Size(220, 23)
+        Me.txtYear.Size = New System.Drawing.Size(178, 20)
         Me.txtYear.TabIndex = 9
         '
         'cmbProgress
@@ -140,10 +148,21 @@ Partial Class Form3
         Me.cmbProgress.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbProgress.FormattingEnabled = True
         Me.cmbProgress.Items.AddRange(New Object() {"Not Started", "In Progress", "Completed"})
-        Me.cmbProgress.Location = New System.Drawing.Point(150, 227)
+        Me.cmbProgress.Location = New System.Drawing.Point(140, 197)
         Me.cmbProgress.Name = "cmbProgress"
-        Me.cmbProgress.Size = New System.Drawing.Size(220, 23)
+        Me.cmbProgress.Size = New System.Drawing.Size(178, 21)
         Me.cmbProgress.TabIndex = 10
+        '
+        'pnlFooter
+        '
+        Me.pnlFooter.BackColor = System.Drawing.Color.Gainsboro
+        Me.pnlFooter.Controls.Add(Me.btnConfirm)
+        Me.pnlFooter.Controls.Add(Me.btnCancel)
+        Me.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.pnlFooter.Location = New System.Drawing.Point(0, 245)
+        Me.pnlFooter.Name = "pnlFooter"
+        Me.pnlFooter.Size = New System.Drawing.Size(343, 50)
+        Me.pnlFooter.TabIndex = 11
         '
         'btnConfirm
         '
@@ -151,10 +170,10 @@ Partial Class Form3
         Me.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnConfirm.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.btnConfirm.ForeColor = System.Drawing.Color.White
-        Me.btnConfirm.Location = New System.Drawing.Point(100, 280)
+        Me.btnConfirm.Location = New System.Drawing.Point(125, 9)
         Me.btnConfirm.Name = "btnConfirm"
-        Me.btnConfirm.Size = New System.Drawing.Size(90, 35)
-        Me.btnConfirm.TabIndex = 11
+        Me.btnConfirm.Size = New System.Drawing.Size(100, 29)
+        Me.btnConfirm.TabIndex = 12
         Me.btnConfirm.Text = "✅ Confirm"
         Me.btnConfirm.UseVisualStyleBackColor = False
         '
@@ -164,21 +183,20 @@ Partial Class Form3
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancel.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.btnCancel.ForeColor = System.Drawing.Color.White
-        Me.btnCancel.Location = New System.Drawing.Point(210, 280)
+        Me.btnCancel.Location = New System.Drawing.Point(231, 9)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(90, 35)
-        Me.btnCancel.TabIndex = 12
+        Me.btnCancel.Size = New System.Drawing.Size(95, 29)
+        Me.btnCancel.TabIndex = 13
         Me.btnCancel.Text = "❌ Cancel"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
         'Form3
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ClientSize = New System.Drawing.Size(400, 340)
-        Me.Controls.Add(Me.btnCancel)
-        Me.Controls.Add(Me.btnConfirm)
+        Me.ClientSize = New System.Drawing.Size(343, 295)
+        Me.Controls.Add(Me.pnlFooter)
         Me.Controls.Add(Me.cmbProgress)
         Me.Controls.Add(Me.txtYear)
         Me.Controls.Add(Me.txtISBN)
@@ -196,6 +214,7 @@ Partial Class Form3
         Me.Name = "Form3"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Edit Book"
+        Me.pnlFooter.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

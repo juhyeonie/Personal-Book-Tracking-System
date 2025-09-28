@@ -2,19 +2,6 @@
 Partial Class Form2
     Inherits System.Windows.Forms.Form
 
-    'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()>
-    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-        Try
-            If disposing AndAlso components IsNot Nothing Then
-                components.Dispose()
-            End If
-        Finally
-            MyBase.Dispose(disposing)
-        End Try
-    End Sub
-
-    'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
 
     Friend WithEvents lblBookName As Label
@@ -31,10 +18,9 @@ Partial Class Form2
     Friend WithEvents btnCancel As Button
     Friend WithEvents lblTitle As Label
     Friend WithEvents grpDetails As GroupBox
+    Friend WithEvents cmbStatus As ComboBox
+    Friend WithEvents pnlFooter As Panel
 
-    'NOTE: The following procedure is required by the Windows Form Designer
-    'It can be modified using the Windows Form Designer.  
-    'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.lblBookName = New System.Windows.Forms.Label()
@@ -52,7 +38,9 @@ Partial Class Form2
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.grpDetails = New System.Windows.Forms.GroupBox()
         Me.cmbStatus = New System.Windows.Forms.ComboBox()
+        Me.pnlFooter = New System.Windows.Forms.Panel()
         Me.grpDetails.SuspendLayout()
+        Me.pnlFooter.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblBookName
@@ -61,8 +49,8 @@ Partial Class Form2
         Me.lblBookName.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.lblBookName.Location = New System.Drawing.Point(17, 30)
         Me.lblBookName.Name = "lblBookName"
-        Me.lblBookName.Size = New System.Drawing.Size(112, 18)
-        Me.lblBookName.TabIndex = 0
+        Me.lblBookName.Size = New System.Drawing.Size(119, 19)
+        Me.lblBookName.TabIndex = 14
         Me.lblBookName.Text = "📖 Name of Book"
         '
         'lblAuthor
@@ -71,8 +59,8 @@ Partial Class Form2
         Me.lblAuthor.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.lblAuthor.Location = New System.Drawing.Point(17, 65)
         Me.lblAuthor.Name = "lblAuthor"
-        Me.lblAuthor.Size = New System.Drawing.Size(68, 18)
-        Me.lblAuthor.TabIndex = 1
+        Me.lblAuthor.Size = New System.Drawing.Size(75, 19)
+        Me.lblAuthor.TabIndex = 15
         Me.lblAuthor.Text = "✍ Author"
         '
         'lblISBN
@@ -81,8 +69,8 @@ Partial Class Form2
         Me.lblISBN.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.lblISBN.Location = New System.Drawing.Point(17, 100)
         Me.lblISBN.Name = "lblISBN"
-        Me.lblISBN.Size = New System.Drawing.Size(54, 18)
-        Me.lblISBN.TabIndex = 2
+        Me.lblISBN.Size = New System.Drawing.Size(61, 19)
+        Me.lblISBN.TabIndex = 16
         Me.lblISBN.Text = "🔖 ISBN"
         '
         'lblYear
@@ -91,8 +79,8 @@ Partial Class Form2
         Me.lblYear.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.lblYear.Location = New System.Drawing.Point(17, 134)
         Me.lblYear.Name = "lblYear"
-        Me.lblYear.Size = New System.Drawing.Size(115, 18)
-        Me.lblYear.TabIndex = 3
+        Me.lblYear.Size = New System.Drawing.Size(121, 19)
+        Me.lblYear.TabIndex = 17
         Me.lblYear.Text = "📅 Year Published"
         '
         'lblProgress
@@ -101,8 +89,8 @@ Partial Class Form2
         Me.lblProgress.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.lblProgress.Location = New System.Drawing.Point(17, 169)
         Me.lblProgress.Name = "lblProgress"
-        Me.lblProgress.Size = New System.Drawing.Size(113, 18)
-        Me.lblProgress.TabIndex = 4
+        Me.lblProgress.Size = New System.Drawing.Size(120, 19)
+        Me.lblProgress.TabIndex = 18
         Me.lblProgress.Text = "📊 Book Progress"
         '
         'txtBookName
@@ -110,38 +98,39 @@ Partial Class Form2
         Me.txtBookName.Location = New System.Drawing.Point(137, 28)
         Me.txtBookName.Name = "txtBookName"
         Me.txtBookName.Size = New System.Drawing.Size(215, 20)
-        Me.txtBookName.TabIndex = 5
+        Me.txtBookName.TabIndex = 19
         '
         'txtAuthor
         '
         Me.txtAuthor.Location = New System.Drawing.Point(137, 62)
         Me.txtAuthor.Name = "txtAuthor"
         Me.txtAuthor.Size = New System.Drawing.Size(215, 20)
-        Me.txtAuthor.TabIndex = 6
+        Me.txtAuthor.TabIndex = 20
         '
         'txtISBN
         '
         Me.txtISBN.Location = New System.Drawing.Point(137, 97)
         Me.txtISBN.Name = "txtISBN"
         Me.txtISBN.Size = New System.Drawing.Size(215, 20)
-        Me.txtISBN.TabIndex = 7
+        Me.txtISBN.TabIndex = 21
         '
         'txtYear
         '
         Me.txtYear.Location = New System.Drawing.Point(137, 132)
         Me.txtYear.Name = "txtYear"
         Me.txtYear.Size = New System.Drawing.Size(215, 20)
-        Me.txtYear.TabIndex = 8
+        Me.txtYear.TabIndex = 22
         '
         'btnConfirm
         '
         Me.btnConfirm.BackColor = System.Drawing.Color.SeaGreen
         Me.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnConfirm.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnConfirm.ForeColor = System.Drawing.Color.White
-        Me.btnConfirm.Location = New System.Drawing.Point(137, 208)
+        Me.btnConfirm.Location = New System.Drawing.Point(106, 10)
         Me.btnConfirm.Name = "btnConfirm"
-        Me.btnConfirm.Size = New System.Drawing.Size(77, 28)
-        Me.btnConfirm.TabIndex = 10
+        Me.btnConfirm.Size = New System.Drawing.Size(90, 30)
+        Me.btnConfirm.TabIndex = 0
         Me.btnConfirm.Text = "✅ Confirm"
         Me.btnConfirm.UseVisualStyleBackColor = False
         '
@@ -149,11 +138,12 @@ Partial Class Form2
         '
         Me.btnClear.BackColor = System.Drawing.Color.SteelBlue
         Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClear.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnClear.ForeColor = System.Drawing.Color.White
-        Me.btnClear.Location = New System.Drawing.Point(219, 208)
+        Me.btnClear.Location = New System.Drawing.Point(202, 10)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(64, 28)
-        Me.btnClear.TabIndex = 11
+        Me.btnClear.Size = New System.Drawing.Size(80, 30)
+        Me.btnClear.TabIndex = 1
         Me.btnClear.Text = "🧹 Clear"
         Me.btnClear.UseVisualStyleBackColor = False
         '
@@ -161,11 +151,12 @@ Partial Class Form2
         '
         Me.btnCancel.BackColor = System.Drawing.Color.IndianRed
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancel.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnCancel.ForeColor = System.Drawing.Color.White
-        Me.btnCancel.Location = New System.Drawing.Point(289, 208)
+        Me.btnCancel.Location = New System.Drawing.Point(288, 10)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(64, 28)
-        Me.btnCancel.TabIndex = 12
+        Me.btnCancel.Size = New System.Drawing.Size(80, 30)
+        Me.btnCancel.TabIndex = 2
         Me.btnCancel.Text = "❌ Cancel"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
@@ -196,12 +187,9 @@ Partial Class Form2
         Me.grpDetails.Controls.Add(Me.txtAuthor)
         Me.grpDetails.Controls.Add(Me.txtISBN)
         Me.grpDetails.Controls.Add(Me.txtYear)
-        Me.grpDetails.Controls.Add(Me.btnConfirm)
-        Me.grpDetails.Controls.Add(Me.btnClear)
-        Me.grpDetails.Controls.Add(Me.btnCancel)
-        Me.grpDetails.Location = New System.Drawing.Point(17, 43)
+        Me.grpDetails.Location = New System.Drawing.Point(17, 45)
         Me.grpDetails.Name = "grpDetails"
-        Me.grpDetails.Size = New System.Drawing.Size(351, 251)
+        Me.grpDetails.Size = New System.Drawing.Size(351, 200)
         Me.grpDetails.TabIndex = 14
         Me.grpDetails.TabStop = False
         Me.grpDetails.Text = " Book Details "
@@ -215,14 +203,25 @@ Partial Class Form2
         Me.cmbStatus.Size = New System.Drawing.Size(214, 21)
         Me.cmbStatus.TabIndex = 13
         '
+        'pnlFooter
+        '
+        Me.pnlFooter.BackColor = System.Drawing.Color.Gainsboro
+        Me.pnlFooter.Controls.Add(Me.btnConfirm)
+        Me.pnlFooter.Controls.Add(Me.btnClear)
+        Me.pnlFooter.Controls.Add(Me.btnCancel)
+        Me.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.pnlFooter.Location = New System.Drawing.Point(0, 262)
+        Me.pnlFooter.Name = "pnlFooter"
+        Me.pnlFooter.Size = New System.Drawing.Size(386, 50)
+        Me.pnlFooter.TabIndex = 15
+        '
         'Form2
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(386, 312)
         Me.Controls.Add(Me.grpDetails)
         Me.Controls.Add(Me.lblTitle)
+        Me.Controls.Add(Me.pnlFooter)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -231,9 +230,8 @@ Partial Class Form2
         Me.Text = "Add Book"
         Me.grpDetails.ResumeLayout(False)
         Me.grpDetails.PerformLayout()
+        Me.pnlFooter.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents cmbStatus As ComboBox
 End Class

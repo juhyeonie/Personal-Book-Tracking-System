@@ -7,7 +7,7 @@ Public Class Form2
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\dudez\Source\Repos\Personal-Book-Tracking-System\Personal-Book-Tracking-System\Ms Access\BookTracker.accdb;"
+        Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\pelgo\source\repos\Personal-Book-Tracking-System\MS Access\BookTracker.accdb;"
         conn = New OleDbConnection(connString)
     End Sub
 
