@@ -1,4 +1,5 @@
-﻿Imports System.Data.OleDb
+﻿Imports System.Configuration
+Imports System.Data.OleDb
 
 
 Public Class Form2
@@ -7,8 +8,9 @@ Public Class Form2
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\pelgo\source\repos\Personal-Book-Tracking-System\MS Access\BookTracker.accdb;"
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MyConnectionString").ConnectionString
         conn = New OleDbConnection(connString)
+
     End Sub
 
     Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
