@@ -1,5 +1,6 @@
 ﻿Imports System.Configuration
 Imports System.Data.OleDb
+Imports System.IO
 
 
 Public Class Form2
@@ -8,8 +9,10 @@ Public Class Form2
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Dim connString As String = ConfigurationManager.ConnectionStrings("MyConnectionString").ConnectionString
+        Dim dbPath As String = Path.Combine(Application.StartupPath, "..\..\..\MS Access\BookTracker.accdb")
+        Dim connString As String = $"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={dbPath};"
         conn = New OleDbConnection(connString)
+
         txtBookName.Focus()
         txtBookName.Select()
 
@@ -29,6 +32,26 @@ Public Class Form2
             txtBookName.Focus()
             Return
         End If
+
+        Try
+            conn.Open()
+            Dim checkNameSql As String = "SELECT COUNT(*) FROM Books WHERE [BookName] = ?"
+            Using checkNameCmd As New OleDbCommand(checkNameSql, conn)
+                checkNameCmd.Parameters.AddWithValue("?", txtBookName.Text.Trim())
+                Dim nameCount As Integer = CInt(checkNameCmd.ExecuteScalar())
+                If nameCount > 0 Then
+                    MessageBox.Show("A book with this name already exists. Please enter a different book name.", "Duplicate Book Name", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    txtBookName.Focus()
+                    conn.Close()
+                    Return
+                End If
+            End Using
+            conn.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error checking for duplicate book name: " & ex.Message)
+            If conn.State = ConnectionState.Open Then conn.Close()
+            Return
+        End Try
 
         Dim rawISBN As String = txtISBN.Text.Trim()
 
@@ -97,8 +120,6 @@ Public Class Form2
             Return
         End Try
 
-
-
         'adjust table/field names to match your Access table
         Dim sql As String = "INSERT INTO Books ([BookName], [Author], [ISBN], [YearPublished], [Status]) " &
                             "VALUES (@BookName, @Author, @ISBN, @YearPublished, @Status)"
@@ -155,4 +176,5 @@ Public Class Form2
             cmbYear.Enabled = True
         End If
     End Sub
+
 End Class

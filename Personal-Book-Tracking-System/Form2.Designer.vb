@@ -49,7 +49,7 @@ Partial Class Form2
         Me.lblBookName.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.lblBookName.Location = New System.Drawing.Point(17, 30)
         Me.lblBookName.Name = "lblBookName"
-        Me.lblBookName.Size = New System.Drawing.Size(147, 23)
+        Me.lblBookName.Size = New System.Drawing.Size(119, 19)
         Me.lblBookName.TabIndex = 14
         Me.lblBookName.Text = "📖 Name of Book"
         '
@@ -59,7 +59,7 @@ Partial Class Form2
         Me.lblAuthor.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.lblAuthor.Location = New System.Drawing.Point(17, 65)
         Me.lblAuthor.Name = "lblAuthor"
-        Me.lblAuthor.Size = New System.Drawing.Size(91, 23)
+        Me.lblAuthor.Size = New System.Drawing.Size(75, 19)
         Me.lblAuthor.TabIndex = 15
         Me.lblAuthor.Text = "✍ Author"
         '
@@ -69,7 +69,7 @@ Partial Class Form2
         Me.lblISBN.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.lblISBN.Location = New System.Drawing.Point(17, 100)
         Me.lblISBN.Name = "lblISBN"
-        Me.lblISBN.Size = New System.Drawing.Size(75, 23)
+        Me.lblISBN.Size = New System.Drawing.Size(61, 19)
         Me.lblISBN.TabIndex = 16
         Me.lblISBN.Text = "🔖 ISBN"
         '
@@ -79,7 +79,7 @@ Partial Class Form2
         Me.lblYear.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.lblYear.Location = New System.Drawing.Point(17, 134)
         Me.lblYear.Name = "lblYear"
-        Me.lblYear.Size = New System.Drawing.Size(149, 23)
+        Me.lblYear.Size = New System.Drawing.Size(121, 19)
         Me.lblYear.TabIndex = 17
         Me.lblYear.Text = "📅 Year Published"
         '
@@ -89,7 +89,7 @@ Partial Class Form2
         Me.lblProgress.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.lblProgress.Location = New System.Drawing.Point(17, 169)
         Me.lblProgress.Name = "lblProgress"
-        Me.lblProgress.Size = New System.Drawing.Size(146, 23)
+        Me.lblProgress.Size = New System.Drawing.Size(120, 19)
         Me.lblProgress.TabIndex = 18
         Me.lblProgress.Text = "📊 Book Progress"
         '
@@ -97,21 +97,21 @@ Partial Class Form2
         '
         Me.txtBookName.Location = New System.Drawing.Point(137, 28)
         Me.txtBookName.Name = "txtBookName"
-        Me.txtBookName.Size = New System.Drawing.Size(215, 22)
+        Me.txtBookName.Size = New System.Drawing.Size(215, 20)
         Me.txtBookName.TabIndex = 19
         '
         'txtAuthor
         '
         Me.txtAuthor.Location = New System.Drawing.Point(137, 62)
         Me.txtAuthor.Name = "txtAuthor"
-        Me.txtAuthor.Size = New System.Drawing.Size(215, 22)
+        Me.txtAuthor.Size = New System.Drawing.Size(215, 20)
         Me.txtAuthor.TabIndex = 20
         '
         'txtISBN
         '
         Me.txtISBN.Location = New System.Drawing.Point(137, 97)
         Me.txtISBN.Name = "txtISBN"
-        Me.txtISBN.Size = New System.Drawing.Size(215, 22)
+        Me.txtISBN.Size = New System.Drawing.Size(215, 20)
         Me.txtISBN.TabIndex = 21
         '
         'btnConfirm
@@ -194,7 +194,7 @@ Partial Class Form2
         Me.chkNoYear.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkNoYear.Location = New System.Drawing.Point(242, 127)
         Me.chkNoYear.Name = "chkNoYear"
-        Me.chkNoYear.Size = New System.Drawing.Size(109, 36)
+        Me.chkNoYear.Size = New System.Drawing.Size(91, 30)
         Me.chkNoYear.TabIndex = 24
         Me.chkNoYear.Text = "Check if year " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "is unknown"
         Me.chkNoYear.UseVisualStyleBackColor = True
@@ -208,7 +208,7 @@ Partial Class Form2
         Me.cmbYear.IntegralHeight = False
         Me.cmbYear.Location = New System.Drawing.Point(137, 133)
         Me.cmbYear.Name = "cmbYear"
-        Me.cmbYear.Size = New System.Drawing.Size(101, 24)
+        Me.cmbYear.Size = New System.Drawing.Size(101, 21)
         Me.cmbYear.TabIndex = 23
         '
         'cmbStatus
@@ -219,7 +219,7 @@ Partial Class Form2
         Me.cmbStatus.Items.AddRange(New Object() {"Not Started", "In Progress", "Completed", "Dropped"})
         Me.cmbStatus.Location = New System.Drawing.Point(137, 167)
         Me.cmbStatus.Name = "cmbStatus"
-        Me.cmbStatus.Size = New System.Drawing.Size(214, 24)
+        Me.cmbStatus.Size = New System.Drawing.Size(214, 21)
         Me.cmbStatus.TabIndex = 13
         '
         'pnlFooter

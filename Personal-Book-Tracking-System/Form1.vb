@@ -1,5 +1,6 @@
 ﻿Imports System.Configuration
 Imports System.Data.OleDb
+Imports System.IO
 
 
 Public Class Form1
@@ -10,7 +11,11 @@ Public Class Form1
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim connString As String = ConfigurationManager.ConnectionStrings("MyConnectionString").ConnectionString
+
+        Dim dbPath As String = Path.Combine(Application.StartupPath, "..\..\..\MS Access\BookTracker.accdb")
+
+
+        Dim connString As String = $"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={dbPath};"
         conn = New OleDbConnection(connString)
 
         LoadData()
@@ -50,9 +55,17 @@ Public Class Form1
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        Dim f3 As New Form3()
+        If dgvBooks.SelectedRows.Count = 0 Then
+            MessageBox.Show("Please select a record to edit.")
+            Return
+        End If
 
+        Dim selectedISBN As String = dgvBooks.SelectedRows(0).Cells("ISBN").Value.ToString()
+
+        Dim f3 As New Form3()
+        f3.EditISBN = selectedISBN
         f3.ShowDialog()
+        LoadData()
     End Sub
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
@@ -104,5 +117,11 @@ Public Class Form1
             LoadData()
         End If
 
+    End Sub
+
+    Private Sub dgvBooks_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvBooks.CellClick
+        If e.RowIndex >= 0 Then
+            dgvBooks.Rows(e.RowIndex).Selected = True
+        End If
     End Sub
 End Class
