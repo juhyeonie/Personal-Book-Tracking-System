@@ -58,10 +58,9 @@ Partial Class Form3
         Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitle.ForeColor = System.Drawing.Color.White
         Me.lblTitle.Location = New System.Drawing.Point(0, 0)
-        Me.lblTitle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Padding = New System.Windows.Forms.Padding(12, 5, 0, 5)
-        Me.lblTitle.Size = New System.Drawing.Size(457, 48)
+        Me.lblTitle.Padding = New System.Windows.Forms.Padding(9, 4, 0, 4)
+        Me.lblTitle.Size = New System.Drawing.Size(343, 39)
         Me.lblTitle.TabIndex = 0
         Me.lblTitle.Text = "✏️ Edit Book Details"
         Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -70,10 +69,9 @@ Partial Class Form3
         '
         Me.lblName.AutoSize = True
         Me.lblName.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName.Location = New System.Drawing.Point(35, 75)
-        Me.lblName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblName.Location = New System.Drawing.Point(26, 61)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(131, 23)
+        Me.lblName.Size = New System.Drawing.Size(97, 17)
         Me.lblName.TabIndex = 1
         Me.lblName.Text = "📖 Book Name:"
         '
@@ -81,10 +79,9 @@ Partial Class Form3
         '
         Me.lblAuthor.AutoSize = True
         Me.lblAuthor.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAuthor.Location = New System.Drawing.Point(35, 117)
-        Me.lblAuthor.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblAuthor.Location = New System.Drawing.Point(26, 95)
         Me.lblAuthor.Name = "lblAuthor"
-        Me.lblAuthor.Size = New System.Drawing.Size(95, 23)
+        Me.lblAuthor.Size = New System.Drawing.Size(72, 17)
         Me.lblAuthor.TabIndex = 2
         Me.lblAuthor.Text = "✍️ Author:"
         '
@@ -92,10 +89,9 @@ Partial Class Form3
         '
         Me.lblISBN.AutoSize = True
         Me.lblISBN.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblISBN.Location = New System.Drawing.Point(35, 160)
-        Me.lblISBN.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblISBN.Location = New System.Drawing.Point(26, 130)
         Me.lblISBN.Name = "lblISBN"
-        Me.lblISBN.Size = New System.Drawing.Size(79, 23)
+        Me.lblISBN.Size = New System.Drawing.Size(59, 17)
         Me.lblISBN.TabIndex = 3
         Me.lblISBN.Text = "🔖 ISBN:"
         '
@@ -103,10 +99,9 @@ Partial Class Form3
         '
         Me.lblYear.AutoSize = True
         Me.lblYear.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblYear.Location = New System.Drawing.Point(35, 203)
-        Me.lblYear.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblYear.Location = New System.Drawing.Point(26, 165)
         Me.lblYear.Name = "lblYear"
-        Me.lblYear.Size = New System.Drawing.Size(153, 23)
+        Me.lblYear.Size = New System.Drawing.Size(115, 17)
         Me.lblYear.TabIndex = 4
         Me.lblYear.Text = "📅 Year Published:"
         '
@@ -114,35 +109,31 @@ Partial Class Form3
         '
         Me.lblProgress.AutoSize = True
         Me.lblProgress.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProgress.Location = New System.Drawing.Point(35, 245)
-        Me.lblProgress.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblProgress.Location = New System.Drawing.Point(26, 199)
         Me.lblProgress.Name = "lblProgress"
-        Me.lblProgress.Size = New System.Drawing.Size(150, 23)
+        Me.lblProgress.Size = New System.Drawing.Size(113, 17)
         Me.lblProgress.TabIndex = 5
         Me.lblProgress.Text = "📊 Book Progress:"
         '
         'txtName
         '
-        Me.txtName.Location = New System.Drawing.Point(187, 71)
-        Me.txtName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtName.Location = New System.Drawing.Point(140, 58)
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(236, 22)
+        Me.txtName.Size = New System.Drawing.Size(178, 20)
         Me.txtName.TabIndex = 6
         '
         'txtAuthor
         '
-        Me.txtAuthor.Location = New System.Drawing.Point(187, 114)
-        Me.txtAuthor.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtAuthor.Location = New System.Drawing.Point(140, 93)
         Me.txtAuthor.Name = "txtAuthor"
-        Me.txtAuthor.Size = New System.Drawing.Size(236, 22)
+        Me.txtAuthor.Size = New System.Drawing.Size(178, 20)
         Me.txtAuthor.TabIndex = 7
         '
         'txtISBN
         '
-        Me.txtISBN.Location = New System.Drawing.Point(187, 156)
-        Me.txtISBN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtISBN.Location = New System.Drawing.Point(140, 127)
         Me.txtISBN.Name = "txtISBN"
-        Me.txtISBN.Size = New System.Drawing.Size(236, 22)
+        Me.txtISBN.Size = New System.Drawing.Size(178, 20)
         Me.txtISBN.TabIndex = 8
         '
         'cmbProgress
@@ -150,10 +141,9 @@ Partial Class Form3
         Me.cmbProgress.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbProgress.FormattingEnabled = True
         Me.cmbProgress.Items.AddRange(New Object() {"Not Started", "In Progress", "Completed", "Dropped"})
-        Me.cmbProgress.Location = New System.Drawing.Point(187, 242)
-        Me.cmbProgress.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbProgress.Location = New System.Drawing.Point(140, 197)
         Me.cmbProgress.Name = "cmbProgress"
-        Me.cmbProgress.Size = New System.Drawing.Size(236, 24)
+        Me.cmbProgress.Size = New System.Drawing.Size(178, 21)
         Me.cmbProgress.TabIndex = 10
         '
         'pnlFooter
@@ -162,10 +152,9 @@ Partial Class Form3
         Me.pnlFooter.Controls.Add(Me.btnConfirm)
         Me.pnlFooter.Controls.Add(Me.btnCancel)
         Me.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pnlFooter.Location = New System.Drawing.Point(0, 301)
-        Me.pnlFooter.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlFooter.Location = New System.Drawing.Point(0, 245)
         Me.pnlFooter.Name = "pnlFooter"
-        Me.pnlFooter.Size = New System.Drawing.Size(457, 62)
+        Me.pnlFooter.Size = New System.Drawing.Size(343, 50)
         Me.pnlFooter.TabIndex = 11
         '
         'btnConfirm
@@ -174,10 +163,9 @@ Partial Class Form3
         Me.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnConfirm.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.btnConfirm.ForeColor = System.Drawing.Color.White
-        Me.btnConfirm.Location = New System.Drawing.Point(167, 11)
-        Me.btnConfirm.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnConfirm.Location = New System.Drawing.Point(125, 9)
         Me.btnConfirm.Name = "btnConfirm"
-        Me.btnConfirm.Size = New System.Drawing.Size(133, 36)
+        Me.btnConfirm.Size = New System.Drawing.Size(100, 29)
         Me.btnConfirm.TabIndex = 12
         Me.btnConfirm.Text = "✅ Confirm"
         Me.btnConfirm.UseVisualStyleBackColor = False
@@ -188,10 +176,9 @@ Partial Class Form3
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancel.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.btnCancel.ForeColor = System.Drawing.Color.White
-        Me.btnCancel.Location = New System.Drawing.Point(308, 11)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCancel.Location = New System.Drawing.Point(231, 9)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(127, 36)
+        Me.btnCancel.Size = New System.Drawing.Size(95, 29)
         Me.btnCancel.TabIndex = 13
         Me.btnCancel.Text = "❌ Cancel"
         Me.btnCancel.UseVisualStyleBackColor = False
@@ -200,9 +187,10 @@ Partial Class Form3
         '
         Me.chkNoYear.AutoSize = True
         Me.chkNoYear.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkNoYear.Location = New System.Drawing.Point(313, 196)
+        Me.chkNoYear.Location = New System.Drawing.Point(235, 159)
+        Me.chkNoYear.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.chkNoYear.Name = "chkNoYear"
-        Me.chkNoYear.Size = New System.Drawing.Size(109, 36)
+        Me.chkNoYear.Size = New System.Drawing.Size(91, 30)
         Me.chkNoYear.TabIndex = 26
         Me.chkNoYear.Text = "Check if year " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "is unknown"
         Me.chkNoYear.UseVisualStyleBackColor = True
@@ -213,17 +201,18 @@ Partial Class Form3
         Me.cmbYear.DropDownWidth = 75
         Me.cmbYear.FormattingEnabled = True
         Me.cmbYear.IntegralHeight = False
-        Me.cmbYear.Location = New System.Drawing.Point(187, 202)
+        Me.cmbYear.Location = New System.Drawing.Point(140, 164)
+        Me.cmbYear.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbYear.Name = "cmbYear"
-        Me.cmbYear.Size = New System.Drawing.Size(122, 24)
+        Me.cmbYear.Size = New System.Drawing.Size(92, 21)
         Me.cmbYear.TabIndex = 25
         '
         'Form3
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ClientSize = New System.Drawing.Size(457, 363)
+        Me.ClientSize = New System.Drawing.Size(343, 295)
         Me.Controls.Add(Me.chkNoYear)
         Me.Controls.Add(Me.cmbYear)
         Me.Controls.Add(Me.pnlFooter)
@@ -238,7 +227,6 @@ Partial Class Form3
         Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.lblTitle)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Form3"
