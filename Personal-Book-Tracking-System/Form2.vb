@@ -20,6 +20,8 @@ Public Class Form2
 
     End Sub
 
+
+
     Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
         'VALIDATION
         If String.IsNullOrWhiteSpace(txtBookName.Text) Then
@@ -28,14 +30,48 @@ Public Class Form2
             Return
         End If
 
-        If Not chkNoYear.Checked AndAlso (cmbYear.SelectedItem Is Nothing OrElse String.IsNullOrEmpty(cmbYear.Text)) Then
-            MessageBox.Show("Please select a year or check the checkbox if year is unknown.")
-            cmbYear.Focus()
-            Return
+        Dim rawISBN As String = txtISBN.Text.Trim()
+
+        If Not IsNumeric(rawISBN) Then
+            MessageBox.Show("ISBN must contain digits only.", "Invalid ISBN", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            txtISBN.Focus()
+            Exit Sub
         End If
 
-        If cmbStatus.SelectedItem Is Nothing Then
-            MessageBox.Show("Please select a book progress.")
+        If rawISBN.Length = 13 Then
+            If Not (rawISBN.StartsWith("978") Or rawISBN.StartsWith("979")) Then
+                MessageBox.Show("ISBN must start with 978 or 979 when 13 digits long.", "Invalid ISBN", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                txtISBN.Focus()
+                Exit Sub
+            End If
+
+        ElseIf rawISBN.Length = 10 Then
+            rawISBN = "978" & rawISBN
+            txtISBN.Text = rawISBN
+
+        Else
+            MessageBox.Show("ISBN must be exactly 10 or 13 digits.", "Invalid ISBN", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            txtISBN.Focus()
+            Exit Sub
+        End If
+
+        If Not chkNoYear.Checked Then
+            If String.IsNullOrWhiteSpace(cmbYear.Text) Then
+                MessageBox.Show("Please select a year or check the checkbox if year is unknown.")
+                cmbYear.Focus()
+                Return
+            End If
+
+            Dim yearValue As Integer
+            If Not Integer.TryParse(cmbYear.Text, yearValue) OrElse cmbYear.Text.Length <> 4 OrElse Not cmbYear.Items.Contains(cmbYear.Text) Then
+                MessageBox.Show("Please enter a valid 4-digit year from the list.")
+                cmbYear.Focus()
+                Return
+            End If
+        End If
+
+        If cmbStatus.SelectedItem Is Nothing AndAlso Not cmbStatus.Items.Contains(cmbStatus.Text) Then
+            MessageBox.Show("Please select a valid book progress from the list.")
             cmbStatus.Focus()
             Return
         End If
@@ -99,7 +135,9 @@ Public Class Form2
         txtAuthor.Clear()
         txtISBN.Clear()
         cmbYear.SelectedIndex = -1 'reset combo
+        cmbYear.Text = ""
         cmbStatus.SelectedIndex = -1 'reset combo
+        cmbStatus.Text = ""
         chkNoYear.Checked = False
         cmbYear.Enabled = True
         txtBookName.Focus()
@@ -109,5 +147,12 @@ Public Class Form2
         Me.Close()
     End Sub
 
-
+    Private Sub chkNoYear_CheckedChanged(sender As Object, e As EventArgs) Handles chkNoYear.CheckedChanged
+        If chkNoYear.Checked Then
+            cmbYear.Enabled = False
+            cmbYear.SelectedIndex = -1 ' Clear selection
+        Else
+            cmbYear.Enabled = True
+        End If
+    End Sub
 End Class

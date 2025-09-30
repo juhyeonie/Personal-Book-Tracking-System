@@ -27,8 +27,7 @@ Public Class Form1
 
             For Each row As DataRow In dt.Rows
                 If row("YearPublished") IsNot Nothing Then
-                    Dim yearrValue = row("YearPublished").ToString()
-
+                    Dim yearValue = row("YearPublished").ToString()
                     If yearValue = "0" Then
                         row("YearPublished") = DBNull.Value
                     End If
@@ -73,19 +72,17 @@ Public Class Form1
         End If
 
         Dim bookName As String = dgvBooks.SelectedRows(0).Cells("bookName").Value.ToString()
-        Dim author As String = dgvBooks.SelectedRows(0).Cells("Author").Value.ToString()
-        Dim isbn As Integer = CInt(dgvBooks.SelectedRows(0).Cells("ISBN").Value)
+
         Dim id As Integer = CInt(dgvBooks.SelectedRows(0).Cells("ID").Value)
 
-        If MessageBox.Show("Are you sure you want to delete this book?", "Confirm", MessageBoxButtons.YesNo) = DialogResult.Yes Then
-            Dim sql As String = "DELETE FROM Books WHERE [ID] = ? AND [BookName] = ? AND [Author] = ? AND [ISBN] = ?"
+        If MessageBox.Show("Are you sure you want to delete this book?", "Confirm Delete", MessageBoxButtons.YesNo) = DialogResult.Yes Then
 
+
+            Dim sql As String = "DELETE FROM Books WHERE [ID] = ?"
             Using cmd As New OleDbCommand(sql, conn)
 
                 cmd.Parameters.AddWithValue("?", id)
-                cmd.Parameters.AddWithValue("?", bookName)
-                cmd.Parameters.AddWithValue("?", author)
-                cmd.Parameters.AddWithValue("?", isbn)
+
 
                 Try
                     conn.Open()

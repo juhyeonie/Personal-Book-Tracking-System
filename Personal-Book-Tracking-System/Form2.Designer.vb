@@ -201,6 +201,7 @@ Partial Class Form2
         '
         'cmbYear
         '
+        Me.cmbYear.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cmbYear.DropDownHeight = 75
         Me.cmbYear.DropDownWidth = 75
         Me.cmbYear.FormattingEnabled = True
@@ -212,6 +213,8 @@ Partial Class Form2
         '
         'cmbStatus
         '
+        Me.cmbStatus.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cmbStatus.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cmbStatus.FormattingEnabled = True
         Me.cmbStatus.Items.AddRange(New Object() {"Not Started", "In Progress", "Completed", "Dropped"})
         Me.cmbStatus.Location = New System.Drawing.Point(137, 167)
